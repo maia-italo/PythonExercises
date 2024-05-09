@@ -3,7 +3,7 @@
 Exercícios do curso de Python do Professor Guanabara (Curso em Vídeo)
 
 
-###Cores:
+### Cores:
 \033[0;31;41m
 style          text                  back
 0-None         30-Branco             40-Branco
