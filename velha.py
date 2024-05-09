@@ -6,9 +6,9 @@ def tabuleiro():
 	for l in range(3):
 		for c in range(3):
 			if t[l][c] == 'X':
-				print(f'| {t[l][c]} |', end='')
+				print(f'| \033[1;31m{t[l][c]}\033[m |', end='')
 			elif t[l][c] == 'O':
-				print(f'| {t[l][c]} |', end='')
+				print(f'| \033[1;36m{t[l][c]}\033[m |', end='')
 			else:
 				print(f'| {t[l][c]} |', end='')
 		print()
