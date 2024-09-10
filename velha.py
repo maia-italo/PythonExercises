@@ -5,9 +5,9 @@ def tabuleiro():
 	print('-------------------')
 	for l in range(3):
 		for c in range(3):
-			if t[l][c] == 'X':
+			if t[l][c] == '\033[1;31mX\033[m':
 				print(f'| \033[1;31m{t[l][c]}\033[m |', end='')
-			elif t[l][c] == 'O':
+			elif t[l][c] == '\033[1;36mO\033[m':
 				print(f'| \033[1;36m{t[l][c]}\033[m |', end='')
 			else:
 				print(f'| {t[l][c]} |', end='')
@@ -15,66 +15,68 @@ def tabuleiro():
 	print('-------------------')
 
 
-def jogar(troca):
+def jogar():
 	troca = False
-	po = input(f'Qual posição deseja jogar [ {simb} ]? ')
-	if po == '1':
-		if t[0][0] == '\033[1;31mX\033[m' or t[0][0] == '\033[1;36mO\033[m':
-			print('Jogada inválida ')
+	while True:
+		po = input(f'Qual posição deseja jogar [ {simb} ]? ')
+		if po == '1':
+			if t[0][0] == '\033[1;31mX\033[m' or t[0][0] == '\033[1;36mO\033[m':
+				print('Jogada inválida ')
+			else:
+				t[0][0] = simb
+				troca = True
+		elif po == '2':
+			if t[0][1] == '\033[1;31mX\033[m' or t[0][1] == '\033[1;36mO\033[m':
+				print('Jogada inválida ')
+			else:
+				t[0][1] = simb
+				troca = True
+		elif po == '3':
+			if t[0][2] == '\033[1;31mX\033[m' or t[0][2] == '\033[1;36mO\033[m':
+				print('Jogada inválida ')
+			else:
+				t[0][2] = simb
+				troca = True
+		elif po == '4':
+			if t[1][0] == '\033[1;31mX\033[m' or t[1][0] == '\033[1;36mO\033[m':
+				print('Jogada inválida ')
+			else:
+				t[1][0] = simb
+				troca = True
+		elif po == '5':
+			if t[1][1] == '\033[1;31mX\033[m' or t[1][1] == '\033[1;36mO\033[m':
+				print('Jogada inválida ')
+			else:
+				t[1][1] = simb
+				troca = True
+		elif po == '6':
+			if t[1][2] == '\033[1;31mX\033[m' or t[1][2] == '\033[1;36mO\033[m':
+				print('Jogada inválida ')
+			else:
+				t[1][2] = simb
+				troca = True
+		elif po == '7':
+			if t[2][0] == '\033[1;31mX\033[m' or t[2][0] == '\033[1;36mO\033[m':
+				print('Jogada inválida ')
+			else:
+				t[2][0] = simb
+				troca = True
+		elif po == '8':
+			if t[2][1] == '\033[1;31mX\033[m' or t[2][1] == '\033[1;36mO\033[m':
+				print('Jogada inválida ')
+			else:
+				t[2][1] = simb
+				troca = True
+		elif po == '9':
+			if t[2][2] == '\033[1;31mX\033[m' or t[2][2] == '\033[1;36mO\033[m':
+				print('Jogada inválida ')
+			else:
+				t[2][2] = simb
+				troca = True
 		else:
-			t[0][0] = simb
-			troca = True
-	elif po == '2':
-		if t[0][1] == '\033[1;31mX\033[m' or t[0][1] == '\033[1;36mO\033[m':
-			print('Jogada inválida ')
-		else:
-			t[0][1] = simb
-			troca = True
-	elif po == '3':
-		if t[0][2] == '\033[1;31mX\033[m' or t[0][2] == '\033[1;36mO\033[m':
-			print('Jogada inválida ')
-		else:
-			t[0][2] = simb
-			troca = True
-	elif po == '4':
-		if t[1][0] == '\033[1;31mX\033[m' or t[1][0] == '\033[1;36mO\033[m':
-			print('Jogada inválida ')
-		else:
-			t[1][0] = simb
-			troca = True
-	elif po == '5':
-		if t[1][1] == '\033[1;31mX\033[m' or t[1][1] == '\033[1;36mO\033[m':
-			print('Jogada inválida ')
-		else:
-			t[1][1] = simb
-			troca = True
-	elif po == '6':
-		if t[1][2] == '\033[1;31mX\033[m' or t[1][2] == '\033[1;36mO\033[m':
-			print('Jogada inválida ')
-		else:
-			t[1][2] = simb
-			troca = True
-	elif po == '7':
-		if t[2][0] == '\033[1;31mX\033[m' or t[2][0] == '\033[1;36mO\033[m':
-			print('Jogada inválida ')
-		else:
-			t[2][0] = simb
-			troca = True
-	elif po == '8':
-		if t[2][1] == '\033[1;31mX\033[m' or t[2][1] == '\033[1;36mO\033[m':
-			print('Jogada inválida ')
-		else:
-			t[2][1] = simb
-			troca = True
-	elif po == '9':
-		if t[2][2] == '\033[1;31mX\033[m' or t[2][2] == '\033[1;36mO\033[m':
-			print('Jogada inválida ')
-		else:
-			t[2][2] = simb
-			troca = True
-	else:
-		print('Posição Inválida')
-	return troca
+			print('Posição Inválida')
+		if troca == True:
+			break
 
 
 def muda_j(s):
@@ -112,8 +114,7 @@ simb = '\033[1;31mX\033[m'
 
 while fim_jogo() == 0:
 	tabuleiro()
-	while jogar(t) == False:
-		jogar(t)
+	jogar()
 	simb = muda_j(simb)
 
 tabuleiro()
